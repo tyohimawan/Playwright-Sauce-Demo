@@ -1,0 +1,42 @@
+export const loginTestData = [
+  {
+    description: 'valid credentials',
+    username: 'standard_user',
+    password: 'secret_sauce',
+    shouldSucceed: true,
+    expectedUrl: /inventory/,
+    expectedError: null,
+  },
+  {
+    description: 'invalid credentials',
+    username: 'invalid_user',
+    password: 'invalid_pass',
+    shouldSucceed: false,
+    expectedUrl: null,
+    expectedError: 'Username and password do not match',
+  },
+  {
+    description: 'locked out user',
+    username: 'locked_out_user',
+    password: 'secret_sauce',
+    shouldSucceed: false,
+    expectedUrl: null,
+    expectedError: 'Sorry, this user has been locked out.',
+  },
+  {
+    description: 'problem user',
+    username: 'problem_user',
+    password: 'secret_sauce',
+    shouldSucceed: true,
+    expectedUrl: /inventory/,
+    expectedError: null,
+  },
+  {
+    description: 'performance glitch user',
+    username: 'performance_glitch_user',
+    password: 'secret_sauce',
+    shouldSucceed: true,
+    expectedUrl: /inventory/,
+    expectedError: null,
+  },
+]; 
